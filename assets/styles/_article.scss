@@ -1,0 +1,204 @@
+@use 'variables' as v;
+@use 'mixins' as mx;
+@use 'placeholders' as p;
+
+article {
+    max-width: 730px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: auto 20px;
+    border-radius: 10px;
+    background-color: v.$white;
+    box-shadow: 0 40px 40px rgba(201, 213, 225, 0.5);
+
+    .drawers {
+        width: 285px;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 24px 40px;
+
+        h1 {
+            @extend %text-preset-1-bold;
+            font-size: clamp(1.05rem, 2.5vw, 1.125rem);
+            color: v.$grey-900;
+        }
+
+        .description {
+            @extend %text-preset-2-medium;
+            font-size: clamp(0.7rem, 2vw, 0.8rem);
+            margin: 24px 0;
+            color: v.$grey-500;
+        }
+
+        .testimony {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+
+
+            .testimony-details {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+
+
+                .avatar {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                }
+
+                .person {
+                    .person-name {
+                        @extend %text-preset-2-bold;
+                        color: v.$grey-900;
+                    }
+
+                    .testimony-date {
+                        @extend %text-preset-2-medium;
+                        color: v.$grey-400;
+                    }
+                }
+            }
+        }
+
+        .share-container {
+
+            position: relative; // <- isso faz com que os filhos absolutos sejam posicionados com base nele
+            display: flex;
+            align-items: center;
+
+            .icon-conteiner {
+
+                width: 32px;
+                height: 32px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                background-color: v.$grey-200;
+
+                &:hover {
+                    background-color: v.$grey-500;
+                    cursor: pointer;
+
+                    .icon path {
+                        fill: v.$white;
+                    }
+                }
+
+
+
+
+            }
+        }
+
+
+
+    }
+}
+
+
+.share {
+    position: absolute;
+    bottom: 40px; // ou ajuste conforme o alinhamento desejado
+    left: 50%;
+    transform: translateX(-50%); // centraliza horizontalmente com base no botão
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .share-rectangle {
+        width: 248px;
+        height: 55px;
+        background: v.$grey-900;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        .share-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 24px;
+
+            p {
+                @extend %text-preset-2-medium;
+                color: v.$white;
+                text-transform: uppercase;
+                color: v.$grey-400;
+                letter-spacing: 2px;
+            }
+
+            .share-icons {
+                display: flex;
+                flex-direction: row;
+                gap: 16px;
+
+
+            }
+        }
+    }
+
+    .share-triangle {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid v.$grey-900;
+        rotate: 180deg;
+    }
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    article {
+        .content {
+            padding: 24px 32px;
+        }
+    }
+}
+
+@media (max-width:375px) {
+    article {
+        flex-direction: column;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: none;
+
+        .drawers {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .content {
+            padding: 32px 20px;
+
+            h1 {
+                font-size: clamp(1.05rem, 2.5vw, 1.125rem);
+            }
+        }
+    }
+}

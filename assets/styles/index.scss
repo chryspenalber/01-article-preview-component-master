@@ -1,0 +1,23 @@
+@use 'variables' as v;
+@use 'mixins' as mx;
+@use 'article' as a;
+@use 'footer' as f;
+@use 'placeholders' as p;
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh; 
+    background-color: v.$grey-200;
+    font-family: 'Manrope', sans-serif;
+}

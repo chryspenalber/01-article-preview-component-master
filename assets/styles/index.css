@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+article .content h1 {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 0.25px;
+}
+
+article .content .testimony .testimony-details .person .person-name {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0.12px;
+}
+
+footer, article .content .description, article .content .testimony .testimony-details .person .testimony-date, .share .share-rectangle .share-content p {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0.12px;
+}
+
+article {
+  max-width: 730px;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 40px 40px rgba(201, 213, 225, 0.5);
+}
+article .drawers {
+  width: 285px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px 0 0 10px;
+}
+article .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 24px 40px;
+}
+article .content h1 {
+  font-size: clamp(1.05rem, 2.5vw, 1.125rem);
+  color: #48556A;
+}
+article .content .description {
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
+  margin: 24px 0;
+  color: #6E8098;
+}
+article .content .testimony {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+article .content .testimony .testimony-details {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+article .content .testimony .testimony-details .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+article .content .testimony .testimony-details .person .person-name {
+  color: #48556A;
+}
+article .content .testimony .testimony-details .person .testimony-date {
+  color: #9DAEC2;
+}
+article .content .share-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+article .content .share-container .icon-conteiner {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #ECF2F8;
+}
+article .content .share-container .icon-conteiner:hover {
+  background-color: #6E8098;
+  cursor: pointer;
+}
+article .content .share-container .icon-conteiner:hover .icon path {
+  fill: #ffffff;
+}
+
+.share {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.share .share-rectangle {
+  width: 248px;
+  height: 55px;
+  background: #48556A;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.share .share-rectangle .share-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+.share .share-rectangle .share-content p {
+  color: #ffffff;
+  text-transform: uppercase;
+  color: #9DAEC2;
+  letter-spacing: 2px;
+}
+.share .share-rectangle .share-content .share-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+.share .share-triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #48556A;
+  rotate: 180deg;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  article .content {
+    padding: 24px 32px;
+  }
+}
+@media (max-width: 375px) {
+  article {
+    flex-direction: column;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+  article .drawers {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+  }
+  article .content {
+    padding: 32px 20px;
+  }
+  article .content h1 {
+    font-size: clamp(1.05rem, 2.5vw, 1.125rem);
+  }
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2.5rem;
+  margin-top: auto;
+  padding: 1rem 0;
+  background-color: #9DAEC2;
+  color: #48556A;
+}
+footer a {
+  color: black;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+footer a:hover {
+  color: #ECF2F8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  background-color: #ECF2F8;
+  font-family: "Manrope", sans-serif;
+}/*# sourceMappingURL=index.css.map */
