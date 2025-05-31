@@ -153,9 +153,10 @@ article .content .share-container .icon-container:hover .icon path {
   margin-top: -1px;
 }
 
-/*.hidden {
+.hidden {
   display: none;
-}*/
+}
+
 .testimony-mobile {
   display: none;
 }
