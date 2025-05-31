@@ -18,6 +18,8 @@ footer {
 
     @extend %text-preset-2-medium;
 
+    font-size: clamp(0.65rem, 2vw, 0.8rem);
+
     a {
         color: black;
         text-decoration: none;

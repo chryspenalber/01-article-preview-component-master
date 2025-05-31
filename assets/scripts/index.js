@@ -11,3 +11,21 @@ shareButton.addEventListener('mouseenter', () => {
 shareContainer.addEventListener('mouseleave', () => {
     shareBalloon.classList.add('hidden');
 });
+
+const hideTestimony = document.getElementById('hide-testimony');
+
+// Esconder o testemunho ao clicar no botão
+hideTestimony.addEventListener('click', () => {
+    const testimony = document.querySelector('.testimony');
+    if (testimony) {
+        testimony.classList.add('hidden');
+    }
+});
+
+// Esconder o testemunho ao clicar no botão de compartilhar
+shareButton.addEventListener('click', () => {
+    const testimony = document.querySelector('.testimony');
+    if (testimony) {
+        testimony.classList.add('hidden');
+    }
+});

@@ -23,13 +23,17 @@ footer, article .content .description, article .content .testimony .testimony-de
   letter-spacing: 0.12px;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 article {
   max-width: 730px;
   height: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: auto 20px;
+  margin: auto 6rem;
   border-radius: 10px;
   background-color: #ffffff;
   box-shadow: 0 40px 40px rgba(201, 213, 225, 0.5);
@@ -48,7 +52,7 @@ article .content {
   padding: 24px 40px;
 }
 article .content h1 {
-  font-size: clamp(1.05rem, 2.5vw, 1.125rem);
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
   color: #48556A;
 }
 article .content .description {
@@ -61,42 +65,46 @@ article .content .testimony {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: clamp(16px, 3vw, 45px);
 }
 article .content .testimony .testimony-details {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: clamp(10px, 4vw, 20px);
 }
 article .content .testimony .testimony-details .avatar {
-  width: 40px;
-  height: 40px;
+  width: clamp(32px, 6vw, 40px);
+  height: clamp(32px, 6vw, 40px);
   border-radius: 50%;
 }
 article .content .testimony .testimony-details .person .person-name {
   color: #48556A;
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
 }
 article .content .testimony .testimony-details .person .testimony-date {
   color: #9DAEC2;
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
 }
 article .content .share-container {
   position: relative;
   display: flex;
   align-items: center;
 }
-article .content .share-container .icon-conteiner {
+article .content .share-container .icon-container {
   width: 32px;
   height: 32px;
+  margin: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   background-color: #ECF2F8;
 }
-article .content .share-container .icon-conteiner:hover {
+article .content .share-container .icon-container:hover {
   background-color: #6E8098;
   cursor: pointer;
 }
-article .content .share-container .icon-conteiner:hover .icon path {
+article .content .share-container .icon-container:hover .icon path {
   fill: #ffffff;
 }
 
@@ -111,8 +119,8 @@ article .content .share-container .icon-conteiner:hover .icon path {
   align-items: center;
 }
 .share .share-rectangle {
-  width: 248px;
-  height: 55px;
+  width: clamp(200px, 28vw, 240px);
+  height: 50px;
   background: #48556A;
   border-radius: 10px;
   display: flex;
@@ -123,18 +131,17 @@ article .content .share-container .icon-conteiner:hover .icon path {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 24px;
+  gap: 1rem;
 }
 .share .share-rectangle .share-content p {
-  color: #ffffff;
-  text-transform: uppercase;
   color: #9DAEC2;
+  text-transform: uppercase;
   letter-spacing: 2px;
 }
 .share .share-rectangle .share-content .share-icons {
   display: flex;
   flex-direction: row;
-  gap: 16px;
+  gap: 1rem;
 }
 .share .share-triangle {
   width: 0;
@@ -143,23 +150,44 @@ article .content .share-container .icon-conteiner:hover .icon path {
   border-right: 10px solid transparent;
   border-bottom: 10px solid #48556A;
   rotate: 180deg;
+  margin-top: -1px;
 }
 
-.hidden {
+/*.hidden {
+  display: none;
+}*/
+.testimony-mobile {
   display: none;
 }
 
 @media (max-width: 768px) {
+  article {
+    max-width: 608px;
+  }
+  article .drawers {
+    width: 229px;
+  }
   article .content {
-    padding: 24px 32px;
+    padding: 1.5rem 2rem;
+  }
+  article .content .icon-container {
+    margin: 5px;
+  }
+  article .content .share-content {
+    gap: 1rem;
+  }
+  article .content .share-content p {
+    font-size: clamp(0.7rem, 2vw, 0.8rem);
   }
 }
 @media (max-width: 375px) {
   article {
+    max-width: 327px;
     flex-direction: column;
     height: auto;
     border-radius: 10px;
     box-shadow: none;
+    margin: 2rem;
   }
   article .drawers {
     width: 100%;
@@ -169,8 +197,52 @@ article .content .share-container .icon-conteiner:hover .icon path {
   article .content {
     padding: 32px 20px;
   }
-  article .content h1 {
-    font-size: clamp(1.05rem, 2.5vw, 1.125rem);
+  .small-screen {
+    display: none;
+  }
+  .testimony-mobile {
+    width: 100%;
+    height: 76px;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #48556A;
+    padding: 0 20px;
+  }
+  .icon-container {
+    width: 32px;
+    height: 32px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #ECF2F8;
+  }
+  .icon-container:hover {
+    background-color: #6E8098;
+  }
+  .icon-container:hover .icon path {
+    fill: #ffffff;
+  }
+  .share-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(16px, 3vw, 45px);
+  }
+  .share-content p {
+    color: #9DAEC2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .share-content .share-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
   }
 }
 footer {
@@ -184,6 +256,7 @@ footer {
   padding: 1rem 0;
   background-color: #9DAEC2;
   color: #48556A;
+  font-size: clamp(0.65rem, 2vw, 0.8rem);
 }
 footer a {
   color: black;

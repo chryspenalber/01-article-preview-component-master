@@ -2,13 +2,17 @@
 @use 'mixins' as mx;
 @use 'placeholders' as p;
 
+body {
+    overflow-x: hidden;
+}
+
 article {
     max-width: 730px;
     height: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: auto 20px;
+    margin: auto 6rem;
     border-radius: 10px;
     background-color: v.$white;
     box-shadow: 0 40px 40px rgba(201, 213, 225, 0.5);
@@ -28,7 +32,7 @@ article {
 
         h1 {
             @extend %text-preset-1-bold;
-            font-size: clamp(1.05rem, 2.5vw, 1.125rem);
+            font-size: clamp(1rem, 2.5vw, 1.125rem);
             color: v.$grey-900;
         }
 
@@ -44,18 +48,16 @@ article {
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-
-
+            gap: clamp(16px, 3vw, 45px);
 
             .testimony-details {
                 display: flex;
                 flex-direction: row;
-                gap: 20px;
-
+                gap: clamp(10px, 4vw, 20px);
 
                 .avatar {
-                    width: 40px;
-                    height: 40px;
+                    width: clamp(32px, 6vw, 40px);
+                    height: clamp(32px, 6vw, 40px);
                     border-radius: 50%;
                 }
 
@@ -63,27 +65,27 @@ article {
                     .person-name {
                         @extend %text-preset-2-bold;
                         color: v.$grey-900;
+                        font-size: clamp(0.7rem, 2vw, 0.8rem);
                     }
 
                     .testimony-date {
                         @extend %text-preset-2-medium;
                         color: v.$grey-400;
+                        font-size: clamp(0.7rem, 2vw, 0.8rem);
                     }
                 }
             }
         }
 
         .share-container {
-
-            position: relative; // <- isso faz com que os filhos absolutos sejam posicionados com base nele
+            position: relative;
             display: flex;
             align-items: center;
 
-            .icon-conteiner {
-
+            .icon-container {
                 width: 32px;
                 height: 32px;
-
+                margin: 5px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -98,60 +100,47 @@ article {
                         fill: v.$white;
                     }
                 }
-
-
-
-
             }
         }
-
-
-
     }
 }
 
-
 .share {
     position: absolute;
-    bottom: 40px; // ou ajuste conforme o alinhamento desejado
+    bottom: 40px;
     left: 50%;
-    transform: translateX(-50%); // centraliza horizontalmente com base no botão
+    transform: translateX(-50%);
     z-index: 10;
-
     display: flex;
     flex-direction: column;
     align-items: center;
 
     .share-rectangle {
-        width: 248px;
-        height: 55px;
+        width: clamp(200px, 28vw, 240px);
+        height: 50px;
         background: v.$grey-900;
         border-radius: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
 
-
         .share-content {
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: 24px;
+            gap: 1rem;
 
             p {
                 @extend %text-preset-2-medium;
-                color: v.$white;
-                text-transform: uppercase;
                 color: v.$grey-400;
+                text-transform: uppercase;
                 letter-spacing: 2px;
             }
 
             .share-icons {
                 display: flex;
                 flex-direction: row;
-                gap: 16px;
-
-
+                gap: 1rem;
             }
         }
     }
@@ -163,29 +152,53 @@ article {
         border-right: 10px solid transparent;
         border-bottom: 10px solid v.$grey-900;
         rotate: 180deg;
+        margin-top: -1px;
     }
 }
 
+/*.hidden {
+  display: none;
+}*/
 
-.hidden {
+.testimony-mobile {
     display: none;
 }
 
 
 @media (max-width: 768px) {
     article {
+        max-width: 608px;
+
+        .drawers {
+            width: 229px;
+        }
+
         .content {
-            padding: 24px 32px;
+            padding: 1.5rem 2rem;
+
+            .icon-container {
+                margin: 5px;
+            }
+
+            .share-content {
+                gap: 1rem;
+
+                p {
+                    font-size: clamp(0.7rem, 2vw, 0.8rem);
+                }
+            }
         }
     }
 }
 
-@media (max-width:375px) {
+@media (max-width: 375px) {
     article {
+        max-width: 327px;
         flex-direction: column;
         height: auto;
         border-radius: 10px;
         box-shadow: none;
+        margin: 2rem;
 
         .drawers {
             width: 100%;
@@ -195,10 +208,63 @@ article {
 
         .content {
             padding: 32px 20px;
+        }
+    }
 
-            h1 {
-                font-size: clamp(1.05rem, 2.5vw, 1.125rem);
+
+    .small-screen {
+        display: none;
+
+    }
+
+    .testimony-mobile {
+        width: 100%;
+        height: 76px;
+        border-radius: 0 0 10px 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background: v.$grey-900;
+        padding: 0 20px;
+    }
+
+    .icon-container {
+        width: 32px;
+        height: 32px;
+        margin: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: v.$grey-200;
+
+        &:hover {
+            background-color: v.$grey-500;
+
+            .icon path {
+                fill: v.$white;
             }
+        }
+    }
+
+    .share-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: clamp(16px, 3vw, 45px);
+
+        p {
+            color: v.$grey-400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .share-icons {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
         }
     }
 }
