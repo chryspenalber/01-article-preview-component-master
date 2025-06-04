@@ -92,6 +92,10 @@ article {
                 border-radius: 50%;
                 background-color: v.$grey-200;
 
+                .icon path {
+                    fill: v.$grey-500;
+                }
+
                 &:hover {
                     background-color: v.$grey-500;
                     cursor: pointer;
@@ -156,8 +160,9 @@ article {
     }
 }
 
+
 .hidden {
-  display: none;
+    display: none;
 }
 
 .testimony-mobile {

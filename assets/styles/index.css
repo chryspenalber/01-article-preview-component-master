@@ -100,6 +100,9 @@ article .content .share-container .icon-container {
   border-radius: 50%;
   background-color: #ECF2F8;
 }
+article .content .share-container .icon-container .icon path {
+  fill: #6E8098;
+}
 article .content .share-container .icon-container:hover {
   background-color: #6E8098;
   cursor: pointer;
