@@ -6,8 +6,10 @@ This project is a solution to a **Frontend Mentor** challenge, proposing the cre
 
 ![Article Preview Component Screenshot](./assets/images/screenshot.png)
 
-🔗 Links
+
+### 🔗 Links
 🔴 [Live Site](https://chryspenalber.github.io/01-article-preview-component-master/)
+
 💻 [GitHub Repository](https://github.com/chryspenalber/01-article-preview-component-master)
 
 
@@ -68,10 +70,10 @@ The layout was carefully designed for various screen sizes:
 
 Este projeto é uma solução para o desafio do site **Frontend Mentor**, propondo a criação de um componente de visualização de artigo com um design limpo, responsivo e funcional, incluindo interação para compartilhamento em redes sociais.
 
-## 📸 Preview
 
-🔗 Links
+### 🔗 Links
 🔴 [Live Site](https://chryspenalber.github.io/01-article-preview-component-master/)
+
 💻 [Repositório no GitHub](https://github.com/chryspenalber/01-article-preview-component-master)
 
 ## 📐 Visão Geral
