@@ -8,13 +8,11 @@ body {
 
 article {
     max-width: 730px;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     margin: auto 6rem;
+    display: flex;
+    align-items: center;
     border-radius: 10px;
-    background-color: v.$white;
+    background: v.$white;
     box-shadow: 0 40px 40px rgba(201, 213, 225, 0.5);
 
     .drawers {
@@ -27,7 +25,6 @@ article {
     .content {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
         padding: 24px 40px;
 
         h1 {
@@ -45,14 +42,12 @@ article {
 
         .testimony {
             display: flex;
-            flex-direction: row;
             justify-content: space-between;
             align-items: center;
             gap: clamp(16px, 3vw, 45px);
 
             .testimony-details {
                 display: flex;
-                flex-direction: row;
                 gap: clamp(10px, 4vw, 20px);
 
                 .avatar {
@@ -61,18 +56,16 @@ article {
                     border-radius: 50%;
                 }
 
-                .person {
-                    .person-name {
-                        @extend %text-preset-2-bold;
-                        color: v.$grey-900;
-                        font-size: clamp(0.7rem, 2vw, 0.8rem);
-                    }
+                .person-name {
+                    @extend %text-preset-2-bold;
+                    color: v.$grey-900;
+                    font-size: clamp(0.7rem, 2vw, 0.8rem);
+                }
 
-                    .testimony-date {
-                        @extend %text-preset-2-medium;
-                        color: v.$grey-400;
-                        font-size: clamp(0.7rem, 2vw, 0.8rem);
-                    }
+                .testimony-date {
+                    @extend %text-preset-2-medium;
+                    color: v.$grey-400;
+                    font-size: clamp(0.7rem, 2vw, 0.8rem);
                 }
             }
         }
@@ -90,14 +83,14 @@ article {
                 justify-content: center;
                 align-items: center;
                 border-radius: 50%;
-                background-color: v.$grey-200;
+                background: v.$grey-200;
 
                 .icon path {
                     fill: v.$grey-500;
                 }
 
                 &:hover {
-                    background-color: v.$grey-500;
+                    background: v.$grey-500;
                     cursor: pointer;
 
                     .icon path {
@@ -130,7 +123,6 @@ article {
 
         .share-content {
             display: flex;
-            flex-direction: row;
             align-items: center;
             gap: 1rem;
 
@@ -143,7 +135,6 @@ article {
 
             .share-icons {
                 display: flex;
-                flex-direction: row;
                 gap: 1rem;
             }
         }
@@ -160,7 +151,6 @@ article {
     }
 }
 
-
 .hidden {
     display: none;
 }
@@ -169,30 +159,13 @@ article {
     display: none;
 }
 
-
+// Media Queries
 @media (max-width: 768px) {
     article {
         max-width: 608px;
 
-        .drawers {
-            width: 229px;
-        }
-
-        .content {
-            padding: 1.5rem 2rem;
-
-            .icon-container {
-                margin: 5px;
-            }
-
-            .share-content {
-                gap: 1rem;
-
-                p {
-                    font-size: clamp(0.7rem, 2vw, 0.8rem);
-                }
-            }
-        }
+        .drawers { width: 229px; }
+        .content { padding: 1.5rem 2rem; }
     }
 }
 
@@ -200,7 +173,6 @@ article {
     article {
         max-width: 327px;
         flex-direction: column;
-        height: auto;
         border-radius: 10px;
         box-shadow: none;
         margin: 2rem;
@@ -211,23 +183,16 @@ article {
             border-radius: 10px 10px 0 0;
         }
 
-        .content {
-            padding: 32px 20px;
-        }
+        .content { padding: 32px 20px; }
     }
 
-
-    .small-screen {
-        display: none;
-
-    }
+    .small-screen { display: none; }
 
     .testimony-mobile {
         width: 100%;
         height: 76px;
         border-radius: 0 0 10px 10px;
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         background: v.$grey-900;
@@ -242,20 +207,17 @@ article {
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        background-color: v.$grey-200;
+        background: v.$grey-200;
 
         &:hover {
-            background-color: v.$grey-500;
+            background: v.$grey-500;
 
-            .icon path {
-                fill: v.$white;
-            }
+            .icon path { fill: v.$white; }
         }
     }
 
     .share-content {
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         gap: clamp(16px, 3vw, 45px);
@@ -268,7 +230,6 @@ article {
 
         .share-icons {
             display: flex;
-            flex-direction: row;
             gap: 1rem;
         }
     }

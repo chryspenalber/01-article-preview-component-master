@@ -7,7 +7,7 @@ article .content h1 {
   letter-spacing: 0.25px;
 }
 
-article .content .testimony .testimony-details .person .person-name {
+article .content .testimony .testimony-details .person-name {
   font-family: "Manrope", sans-serif;
   font-size: 0.8rem;
   font-weight: 700;
@@ -15,7 +15,7 @@ article .content .testimony .testimony-details .person .person-name {
   letter-spacing: 0.12px;
 }
 
-footer, article .content .description, article .content .testimony .testimony-details .person .testimony-date, .share .share-rectangle .share-content p {
+footer, article .content .description, article .content .testimony .testimony-details .testimony-date, .share .share-rectangle .share-content p {
   font-family: "Manrope", sans-serif;
   font-size: 0.8rem;
   font-weight: 500;
@@ -29,13 +29,11 @@ body {
 
 article {
   max-width: 730px;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   margin: auto 6rem;
+  display: flex;
+  align-items: center;
   border-radius: 10px;
-  background-color: #ffffff;
+  background: #ffffff;
   box-shadow: 0 40px 40px rgba(201, 213, 225, 0.5);
 }
 article .drawers {
@@ -48,7 +46,6 @@ article .drawers {
 article .content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   padding: 24px 40px;
 }
 article .content h1 {
@@ -62,14 +59,12 @@ article .content .description {
 }
 article .content .testimony {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: clamp(16px, 3vw, 45px);
 }
 article .content .testimony .testimony-details {
   display: flex;
-  flex-direction: row;
   gap: clamp(10px, 4vw, 20px);
 }
 article .content .testimony .testimony-details .avatar {
@@ -77,11 +72,11 @@ article .content .testimony .testimony-details .avatar {
   height: clamp(32px, 6vw, 40px);
   border-radius: 50%;
 }
-article .content .testimony .testimony-details .person .person-name {
+article .content .testimony .testimony-details .person-name {
   color: #48556A;
   font-size: clamp(0.7rem, 2vw, 0.8rem);
 }
-article .content .testimony .testimony-details .person .testimony-date {
+article .content .testimony .testimony-details .testimony-date {
   color: #9DAEC2;
   font-size: clamp(0.7rem, 2vw, 0.8rem);
 }
@@ -98,13 +93,13 @@ article .content .share-container .icon-container {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: #ECF2F8;
+  background: #ECF2F8;
 }
 article .content .share-container .icon-container .icon path {
   fill: #6E8098;
 }
 article .content .share-container .icon-container:hover {
-  background-color: #6E8098;
+  background: #6E8098;
   cursor: pointer;
 }
 article .content .share-container .icon-container:hover .icon path {
@@ -132,7 +127,6 @@ article .content .share-container .icon-container:hover .icon path {
 }
 .share .share-rectangle .share-content {
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 1rem;
 }
@@ -143,7 +137,6 @@ article .content .share-container .icon-container:hover .icon path {
 }
 .share .share-rectangle .share-content .share-icons {
   display: flex;
-  flex-direction: row;
   gap: 1rem;
 }
 .share .share-triangle {
@@ -174,21 +167,11 @@ article .content .share-container .icon-container:hover .icon path {
   article .content {
     padding: 1.5rem 2rem;
   }
-  article .content .icon-container {
-    margin: 5px;
-  }
-  article .content .share-content {
-    gap: 1rem;
-  }
-  article .content .share-content p {
-    font-size: clamp(0.7rem, 2vw, 0.8rem);
-  }
 }
 @media (max-width: 425px) {
   article {
     max-width: 327px;
     flex-direction: column;
-    height: auto;
     border-radius: 10px;
     box-shadow: none;
     margin: 2rem;
@@ -209,7 +192,6 @@ article .content .share-container .icon-container:hover .icon path {
     height: 76px;
     border-radius: 0 0 10px 10px;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     background: #48556A;
@@ -223,17 +205,16 @@ article .content .share-container .icon-container:hover .icon path {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: #ECF2F8;
+    background: #ECF2F8;
   }
   .icon-container:hover {
-    background-color: #6E8098;
+    background: #6E8098;
   }
   .icon-container:hover .icon path {
     fill: #ffffff;
   }
   .share-content {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: clamp(16px, 3vw, 45px);
@@ -245,27 +226,24 @@ article .content .share-container .icon-container:hover .icon path {
   }
   .share-content .share-icons {
     display: flex;
-    flex-direction: row;
     gap: 1rem;
   }
 }
 footer {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 2.5rem;
-  margin-top: auto;
+  min-height: 2.5rem;
   padding: 1rem 0;
-  background-color: #9DAEC2;
+  background: #9DAEC2;
   color: #48556A;
   font-size: clamp(0.65rem, 2vw, 0.8rem);
 }
 footer a {
   color: black;
   text-decoration: none;
-  transition: all 0.3s ease-in-out;
+  transition: color 0.3s;
 }
 footer a:hover {
   color: #ECF2F8;
