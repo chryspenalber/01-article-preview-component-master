@@ -184,7 +184,7 @@ article .content .share-container .icon-container:hover .icon path {
     font-size: clamp(0.7rem, 2vw, 0.8rem);
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 425px) {
   article {
     max-width: 327px;
     flex-direction: column;
